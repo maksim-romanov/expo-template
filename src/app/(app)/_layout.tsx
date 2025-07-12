@@ -1,13 +1,21 @@
 import { Stack } from "expo-router";
 
-export default function AppLayout() {
-  return (
-    <Stack initialRouteName="(tabs)">
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="(top-tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+import { ServicesProvider } from "services";
 
-      <Stack.Screen name="profile" options={{ headerShown: false }} />
+export const appWrapper = <T extends object>(Component: React.ComponentType<T>) => {
+  return function WrappedComponent(props: T) {
+    return (
+      <ServicesProvider>
+        <Component {...props} />
+      </ServicesProvider>
+    );
+  };
+};
+
+export default function Layout() {
+  return (
+    <Stack>
+      <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
     </Stack>
   );
 }

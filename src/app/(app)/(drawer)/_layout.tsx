@@ -6,7 +6,8 @@ export default function Layout() {
   return (
     <GestureHandlerRootView style={styles.container}>
       <Drawer>
-        <Drawer.Screen name="friends" />
+        <Drawer.Screen name="(top-tabs)" />
+        <Drawer.Screen name="home" />
       </Drawer>
     </GestureHandlerRootView>
   );
