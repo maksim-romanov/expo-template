@@ -1,34 +1,34 @@
 import "react-native-reanimated";
 
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
-import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { observer } from "mobx-react-lite";
+import { container } from "tsyringe";
 
-import { useColorScheme } from "hooks/useColorScheme";
+import { AuthService } from "services/auth/auth.service";
+import { AUTH_SERVICE } from "services/auth/tokens";
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require("../../assets/fonts/SpaceMono-Regular.ttf"),
-  });
+const authService = container.resolve<AuthService>(AUTH_SERVICE);
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
+export default observer(function RootLayout() {
+  const isAuthenticated = authService.authStore.isAuthenticated;
 
   return (
-    <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+    <>
+      <Stack initialRouteName="onboarding">
+        <Stack.Protected guard={isAuthenticated}>
+          <Stack.Screen name="(app)" options={{ headerShown: false }} />
+        </Stack.Protected>
+
+        <Stack.Protected guard={!isAuthenticated}>
+          <Stack.Screen name="onboarding" options={{ headerShown: false }} />
+          <Stack.Screen name="login" options={{ headerShown: false }} />
+        </Stack.Protected>
+
+        <Stack.Screen name="+not-found" options={{ headerShown: false }} />
       </Stack>
+
       <StatusBar style="auto" />
-    </ThemeProvider>
+    </>
   );
-}
+});
