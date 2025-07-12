@@ -13,11 +13,7 @@ export const LoginScreen = observer(function () {
   return (
     <View style={styles.container}>
       <Text>LoginScreen</Text>
-      <Button
-        title={isLoading ? "Logging in..." : "Login"}
-        onPress={() => authService.login()}
-        disabled={isLoading}
-      />
+      <Button title={isLoading ? "Logging in..." : "Login"} onPress={() => authService.login()} disabled={isLoading} />
     </View>
   );
 });

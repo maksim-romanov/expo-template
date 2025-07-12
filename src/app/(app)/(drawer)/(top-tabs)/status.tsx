@@ -1,1 +1,1 @@
-export { HomeScreen as default } from "screens";
+export { StatusScreen as default } from "screens";
