@@ -1,4 +1,5 @@
 // https://docs.expo.dev/guides/using-eslint/
+const cspellConfigs = require("@cspell/eslint-plugin/configs");
 const { defineConfig } = require("eslint/config");
 const expoConfig = require("eslint-config-expo/flat");
 const importPlugin = require("eslint-plugin-import");
@@ -8,6 +9,7 @@ module.exports = defineConfig([
   expoConfig,
   eslintPluginPrettierRecommended,
   importPlugin.flatConfigs["react-native"],
+  cspellConfigs.recommended,
   {
     ignores: ["dist/*", ".expo/*", "node_modules/*"],
   },
