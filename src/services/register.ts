@@ -1,1 +1,1 @@
-import "./auth/register";
+import "./modules/register";

@@ -4,9 +4,8 @@ import { StyleSheet } from "react-native-unistyles";
 import { container } from "tsyringe";
 
 import { AuthService } from "services/auth/auth.service";
-import { AUTH_SERVICE } from "services/auth/tokens";
 
-const authService = container.resolve<AuthService>(AUTH_SERVICE);
+const authService = container.resolve(AuthService);
 
 export const LoginScreen = observer(function () {
   const isLoading = authService.authStore.isLoading;
