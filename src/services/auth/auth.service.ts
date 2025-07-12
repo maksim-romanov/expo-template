@@ -9,7 +9,9 @@ export class AuthService {
   constructor(@inject(AUTH_STORE) public authStore: AuthStore) {}
 
   async login() {
-    await new Promise((resolve) => setTimeout(resolve, 100));
+    this.authStore.setIsLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    this.authStore.setIsLoading(false);
     this.authStore.setIsAuthenticated(true);
     router.replace("/");
   }

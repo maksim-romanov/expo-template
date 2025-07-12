@@ -2,14 +2,14 @@ import { router } from "expo-router";
 import { Button, Text, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
 
-export function OnboardingScreen() {
+export const OnboardingScreen = function () {
   return (
     <View style={styles.container}>
       <Text>OnboardingScreen</Text>
       <Button title="Login" onPress={() => router.replace("/login")} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

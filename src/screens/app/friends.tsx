@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
 
-export const HomeScreen = function () {
+export const FriendsScreen = function () {
   return (
     <View style={styles.container}>
-      <Text>HomeScreen</Text>
+      <Text>FriendsScreen</Text>
     </View>
   );
 };
