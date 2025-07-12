@@ -30,7 +30,7 @@ export default appWrapper(
 
           <Stack.Protected guard={!isAuthenticated}>
             <Stack.Screen name="onboarding" options={{ headerShown: false }} />
-            <Stack.Screen name="login" options={{ headerShown: false }} />
+            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           </Stack.Protected>
 
           <Stack.Screen name="+not-found" options={{ headerShown: false }} />
