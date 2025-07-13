@@ -3,6 +3,7 @@ module.exports = function (api) {
   return {
     presets: ["babel-preset-expo"],
     plugins: [
+      "@lingui/babel-plugin-lingui-macro",
       "babel-plugin-transform-typescript-metadata",
       [
         "react-native-unistyles/plugin",

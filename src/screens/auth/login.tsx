@@ -1,3 +1,4 @@
+import { Trans, useLingui } from "@lingui/react/macro";
 import { observer } from "mobx-react-lite";
 import { Button } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
@@ -10,12 +11,19 @@ import { AuthService } from "services/auth/auth.service";
 const authService = container.resolve(AuthService);
 
 export const LoginScreen = observer(function () {
+  const { t } = useLingui();
   const isLoading = authService.authStore.isLoading;
 
   return (
     <ThemedView style={styles.container}>
-      <ThemedText>LoginScreen</ThemedText>
-      <Button title={isLoading ? "Logging in..." : "Login"} onPress={() => authService.login()} disabled={isLoading} />
+      <ThemedText>
+        <Trans>LoginScreen</Trans>
+      </ThemedText>
+      <Button
+        title={isLoading ? t`Logging in...` : t`Login`}
+        onPress={() => authService.login()}
+        disabled={isLoading}
+      />
     </ThemedView>
   );
 });

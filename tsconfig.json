@@ -24,13 +24,16 @@
       "assets/*": [
         "../assets/*",
       ],
+      "locales/*": [
+        "../locales/*",
+      ],
     }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "**/*.ts",
-    "**/*.tsx", 
+    "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
   ]

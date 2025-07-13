@@ -1,3 +1,4 @@
+import { Trans } from "@lingui/react/macro";
 import { StyleSheet } from "react-native-unistyles";
 
 import { ThemedText } from "components/ThemedText";
@@ -6,7 +7,9 @@ import { ThemedView } from "components/ThemedView";
 export const SettingsScreen = function () {
   return (
     <ThemedView style={styles.container}>
-      <ThemedText>SettingsScreen</ThemedText>
+      <ThemedText>
+        <Trans>SettingsScreen</Trans>
+      </ThemedText>
     </ThemedView>
   );
 };

@@ -7,3 +7,4 @@ thirdy
 keysfile
 rnfs
 unistyles
+lingui
