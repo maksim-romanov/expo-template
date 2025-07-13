@@ -1,11 +1,13 @@
-import { Text, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
+
+import { ThemedText } from "components/ThemedText";
+import { ThemedView } from "components/ThemedView";
 
 export const OrdersScreen = function () {
   return (
-    <View style={styles.container}>
-      <Text>OrdersScreen</Text>
-    </View>
+    <ThemedView style={styles.container}>
+      <ThemedText>OrdersScreen</ThemedText>
+    </ThemedView>
   );
 };
 

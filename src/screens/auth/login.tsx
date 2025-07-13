@@ -1,8 +1,10 @@
 import { observer } from "mobx-react-lite";
-import { Button, Text, View } from "react-native";
+import { Button } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
 import { container } from "tsyringe";
 
+import { ThemedText } from "components/ThemedText";
+import { ThemedView } from "components/ThemedView";
 import { AuthService } from "services/auth/auth.service";
 
 const authService = container.resolve(AuthService);
@@ -11,10 +13,10 @@ export const LoginScreen = observer(function () {
   const isLoading = authService.authStore.isLoading;
 
   return (
-    <View style={styles.container}>
-      <Text>LoginScreen</Text>
+    <ThemedView style={styles.container}>
+      <ThemedText>LoginScreen</ThemedText>
       <Button title={isLoading ? "Logging in..." : "Login"} onPress={() => authService.login()} disabled={isLoading} />
-    </View>
+    </ThemedView>
   );
 });
 

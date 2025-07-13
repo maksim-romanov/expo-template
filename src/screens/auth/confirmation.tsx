@@ -1,11 +1,13 @@
-import { Text, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
+
+import { ThemedText } from "components/ThemedText";
+import { ThemedView } from "components/ThemedView";
 
 export const ConfirmationScreen = function () {
   return (
-    <View style={styles.container}>
-      <Text>ConfirmationScreen</Text>
-    </View>
+    <ThemedView style={styles.container}>
+      <ThemedText>ConfirmationScreen</ThemedText>
+    </ThemedView>
   );
 };
 

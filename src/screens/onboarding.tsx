@@ -1,13 +1,16 @@
 import { router } from "expo-router";
-import { Button, Text, View } from "react-native";
+import { Button } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
+
+import { ThemedText } from "components/ThemedText";
+import { ThemedView } from "components/ThemedView";
 
 export const OnboardingScreen = function () {
   return (
-    <View style={styles.container}>
-      <Text>OnboardingScreen</Text>
+    <ThemedView style={styles.container}>
+      <ThemedText>OnboardingScreen</ThemedText>
       <Button title="Login" onPress={() => router.replace("/login")} />
-    </View>
+    </ThemedView>
   );
 };
 

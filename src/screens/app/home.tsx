@@ -1,11 +1,13 @@
-import { Text, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
+
+import { ThemedText } from "components/ThemedText";
+import { ThemedView } from "components/ThemedView";
 
 export const HomeScreen = function () {
   return (
-    <View style={styles.container}>
-      <Text>HomeScreen</Text>
-    </View>
+    <ThemedView style={styles.container}>
+      <ThemedText>HomeScreen</ThemedText>
+    </ThemedView>
   );
 };
 

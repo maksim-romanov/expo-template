@@ -1,11 +1,13 @@
-import { Text, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
+
+import { ThemedText } from "components/ThemedText";
+import { ThemedView } from "components/ThemedView";
 
 export const SettingsScreen = function () {
   return (
-    <View style={styles.container}>
-      <Text>SettingsScreen</Text>
-    </View>
+    <ThemedView style={styles.container}>
+      <ThemedText>SettingsScreen</ThemedText>
+    </ThemedView>
   );
 };
 
