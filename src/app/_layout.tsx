@@ -2,13 +2,15 @@ import "react-native-reanimated";
 
 import React, { Suspense } from "react";
 
-import { Stack } from "expo-router";
+import { SplashScreen, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { observer } from "mobx-react-lite";
 import { ActivityIndicator } from "react-native";
 
 import { I18nWrapper } from "components/internationalization";
-import { ServicesProvider, useServices } from "services";
+import { initServices, ServicesProvider, useServices } from "services";
+
+SplashScreen.preventAutoHideAsync();
 
 const RootStack = observer(function () {
   const { authService } = useServices();
@@ -34,7 +36,19 @@ const RootStack = observer(function () {
   );
 });
 
+const initApp = async () => {
+  try {
+    await initServices();
+  } finally {
+    SplashScreen.hide();
+  }
+};
+
 export default function RootLayout() {
+  React.useEffect(() => {
+    initApp();
+  }, []);
+
   return (
     <Suspense fallback={<ActivityIndicator />}>
       <I18nWrapper>
