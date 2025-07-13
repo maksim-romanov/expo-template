@@ -1,6 +1,6 @@
 {
   "*.{ts,tsx}": [
-    "eslint --fix",
-    "tsc --noEmit"
+    "eslint --cache --fix",
+    "bash -c tsc --skipLibCheck --noEmit -p tsconfig.json"
   ]
-} 
+}

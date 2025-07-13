@@ -7,11 +7,13 @@ import { AuthStore } from "./auth.store";
 
 @registry([{ token: LOGGER, useValue: new BaseLogger("AuthService") }])
 @singleton()
-export class AuthService {
+export class AuthService implements Service {
   constructor(
     @inject(AuthStore) public authStore: AuthStore,
     @inject(LOGGER) public logger: Logger,
   ) {}
+
+  init() {}
 
   async login() {
     this.logger.log("login called");

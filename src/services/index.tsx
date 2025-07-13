@@ -16,3 +16,7 @@ export const ServicesProvider = ({ children }: React.PropsWithChildren) => (
 );
 
 export const useServices = (): ContextServices => React.useContext(servicesContext);
+
+export async function initServices() {
+  for (const service of Object.values(services)) await service.init();
+}
