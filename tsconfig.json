@@ -7,26 +7,26 @@
     "baseUrl": "src",
     "paths": {
       "components/*": [
-        "./components/*",
+        "components/*",
       ],
       "hooks/*": [
-        "./hooks/*",
+        "hooks/*",
       ],
-      "constants": [
-        "./constants/*",
+      "constants/*": [
+        "constants/*",
       ],
       "services/*": [
-        "./services/*",
+        "services/*",
       ],
       "utils/*": [
-        "./utils/*",
+        "utils/*",
       ],
       "assets/*": [
         "../assets/*",
       ],
       "locales/*": [
         "../locales/*",
-      ],
+      ]
     }
   },
   "include": [
