@@ -1,12 +1,14 @@
 // https://docs.expo.dev/guides/using-eslint/
 const cspellConfigs = require("@cspell/eslint-plugin/configs");
 const json = require("@eslint/json").default;
+const markdown = require("@eslint/markdown").default;
 const { defineConfig } = require("eslint/config");
 const expoConfig = require("eslint-config-expo/flat");
 const importPlugin = require("eslint-plugin-import");
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 
 module.exports = defineConfig([
+  markdown.configs.recommended,
   eslintPluginPrettierRecommended,
   cspellConfigs.recommended,
   {
