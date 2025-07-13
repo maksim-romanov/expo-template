@@ -12,10 +12,7 @@ type ContextServices = typeof services;
 
 const servicesContext = React.createContext<ContextServices>(services);
 export const ServicesProvider = ({ children }: React.PropsWithChildren) => (
-  <servicesContext.Provider value={services}>
-    {children}
-  </servicesContext.Provider>
+  <servicesContext.Provider value={services}>{children}</servicesContext.Provider>
 );
 
-export const useServices = (): ContextServices =>
-  React.useContext(servicesContext);
+export const useServices = (): ContextServices => React.useContext(servicesContext);
