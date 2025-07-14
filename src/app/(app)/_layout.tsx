@@ -1,6 +1,10 @@
 import { Stack } from "expo-router";
+import { useUnistyles } from "react-native-unistyles";
 
 export default function Layout() {
+  const unistyles = useUnistyles();
+  console.log("res.rt.breakpoint: ", unistyles.rt.breakpoint);
+
   return (
     <Stack>
       <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
@@ -11,9 +15,7 @@ export default function Layout() {
           gestureEnabled: true,
           gestureDirection: "vertical",
           headerShown: false,
-          contentStyle: {
-            backgroundColor: "rgba(0, 0, 0, 0.35)",
-          },
+          animation: "none",
         }}
       />
     </Stack>

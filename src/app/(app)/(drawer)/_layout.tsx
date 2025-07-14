@@ -1,11 +1,18 @@
 import { Drawer } from "expo-router/drawer";
-import { StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { StyleSheet, useUnistyles } from "react-native-unistyles";
 
 export default function Layout() {
+  const unistyles = useUnistyles();
+
   return (
     <GestureHandlerRootView style={styles.container}>
-      <Drawer>
+      <Drawer
+        screenOptions={{
+          drawerType: unistyles.rt.breakpoint === "xl" ? "permanent" : "front",
+          drawerStyle: styles.drawerStyle,
+        }}
+      >
         <Drawer.Screen name="(top-tabs)" />
         <Drawer.Screen name="home" />
       </Drawer>
@@ -13,8 +20,15 @@ export default function Layout() {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create((theme, runtime) => ({
   container: {
     flex: 1,
   },
-});
+
+  drawerStyle: {
+    backgroundColor: {
+      md: "white",
+      xl: "red",
+    },
+  },
+}));
