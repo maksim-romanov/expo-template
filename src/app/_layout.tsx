@@ -2,6 +2,7 @@ import "react-native-reanimated";
 
 import React, { Suspense } from "react";
 
+import { Toaster } from "burnt/web";
 import { SplashScreen, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { observer } from "mobx-react-lite";
@@ -54,6 +55,7 @@ export default function RootLayout() {
       <I18nWrapper>
         <ServicesProvider>
           <RootStack />
+          <Toaster />
         </ServicesProvider>
       </I18nWrapper>
     </Suspense>

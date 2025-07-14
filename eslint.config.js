@@ -5,6 +5,7 @@ const markdown = require("@eslint/markdown").default;
 const { defineConfig } = require("eslint/config");
 const expoConfig = require("eslint-config-expo/flat");
 const importPlugin = require("eslint-plugin-import");
+const jest = require("eslint-plugin-jest");
 const eslintPluginPrettierRecommended = require("eslint-plugin-prettier/recommended");
 
 module.exports = defineConfig([
@@ -37,5 +38,9 @@ module.exports = defineConfig([
     plugins: { json },
     language: "json/json",
     extends: ["json/recommended"],
+  },
+  {
+    files: ["**/*.spec.ts", "**/*.spec.tsx", "jest.*"],
+    ...jest.configs["flat/recommended"],
   },
 ]);

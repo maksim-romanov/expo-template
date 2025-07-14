@@ -2,10 +2,12 @@ import React from "react";
 
 import { container } from "tsyringe";
 
+import { ApplicationService } from "./application";
 import { AuthService } from "./auth";
 
 export const services = {
   authService: container.resolve(AuthService),
+  appService: container.resolve(ApplicationService),
 };
 
 type ContextServices = typeof services;

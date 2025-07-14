@@ -13,7 +13,7 @@ export class AuthService implements Service {
     @inject(LOGGER) public logger: Logger,
   ) {}
 
-  init() {}
+  async init() {}
 
   async login() {
     this.logger.log("login called");

@@ -1,3 +1,9 @@
 interface Service {
-  init: () => PVoid;
+  init: () => PVoid | Promise<PVoid>;
 }
+
+interface Store {
+  hydrate?: () => PVoid;
+}
+
+type Nullable<T> = T | null;
