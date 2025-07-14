@@ -1,0 +1,39 @@
+{
+  "cli": {
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "production": {
+      "env": {
+        "APP_VARIANT": "production",
+        "KEYSFILE": "keys/keys.production.json"
+      },
+      "autoIncrement": true,
+      "channel": "production"
+    },
+    "development": {
+      "extends": "production",
+      "developmentClient": true,
+      "env": {
+        "APP_VARIANT": "development",
+        "KEYSFILE": "keys/keys.development.json"
+      },
+      "channel": "development"
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "track": "internal",
+        "releaseStatus": "completed"
+      },
+      "ios": {
+        "appleTeamId": "",
+        "ascAppId": ""
+      }
+    },
+    "staging": {
+      "extends": "production"
+    }
+  }
+}
