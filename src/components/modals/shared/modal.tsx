@@ -1,23 +1,10 @@
 import { Link, router, useNavigation } from "expo-router";
-import { Pressable } from "react-native";
+import { Pressable, View } from "react-native";
 import { Gesture, GestureDetector, GestureHandlerRootView } from "react-native-gesture-handler";
-import Animated, {
-  FadeIn,
-  FadeInDown,
-  FadeOut,
-  FadeOutDown,
-  runOnJS,
-  SlideInDown,
-  SlideInRight,
-  SlideOutDown,
-  SlideOutRight,
-} from "react-native-reanimated";
+import { runOnJS } from "react-native-reanimated";
 import { StyleSheet } from "react-native-unistyles";
 
-import { useMinBreakpoint } from "hooks/unistyles";
-
 export const ScreenModal = function ({ children }: React.PropsWithChildren) {
-  const isLarge = useMinBreakpoint("lg");
   const navigation = useNavigation();
   const isPresented = router.canGoBack();
 
@@ -28,23 +15,13 @@ export const ScreenModal = function ({ children }: React.PropsWithChildren) {
   return (
     <GestureHandlerRootView style={styles.flex}>
       <GestureDetector gesture={pan}>
-        <Animated.View
-          entering={isLarge ? FadeIn : FadeInDown}
-          exiting={isLarge ? FadeOut : FadeOutDown}
-          style={[styles.flex, styles.wrapper]}
-        >
+        <View style={[styles.flex, styles.wrapper]}>
           <Link href={"../"} asChild>
             <Pressable style={StyleSheet.absoluteFill} />
           </Link>
 
-          <Animated.View
-            entering={isLarge ? SlideInRight : SlideInDown}
-            exiting={isLarge ? SlideOutRight : SlideOutDown}
-            style={styles.container}
-          >
-            {children}
-          </Animated.View>
-        </Animated.View>
+          <View style={styles.container}>{children}</View>
+        </View>
       </GestureDetector>
     </GestureHandlerRootView>
   );

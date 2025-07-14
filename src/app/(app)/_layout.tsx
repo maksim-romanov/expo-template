@@ -1,9 +1,9 @@
 import { Stack } from "expo-router";
-import { useUnistyles } from "react-native-unistyles";
+
+import { useMinBreakpoint } from "hooks/unistyles";
 
 export default function Layout() {
-  const unistyles = useUnistyles();
-  console.log("res.rt.breakpoint: ", unistyles.rt.breakpoint);
+  const isLarge = useMinBreakpoint("lg");
 
   return (
     <Stack>
@@ -13,7 +13,7 @@ export default function Layout() {
         options={{
           presentation: "transparentModal",
           gestureEnabled: true,
-          gestureDirection: "vertical",
+          gestureDirection: isLarge ? "horizontal" : "vertical",
           headerShown: false,
           animation: "none",
         }}
