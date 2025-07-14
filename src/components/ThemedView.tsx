@@ -7,6 +7,6 @@ export function ThemedView({ style, ...otherProps }: ViewProps) {
 
 const styles = StyleSheet.create((theme) => ({
   container: {
-    backgroundColor: theme.colors.secondary,
+    backgroundColor: theme.colors.secondary[300],
   },
 }));

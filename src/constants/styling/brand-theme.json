@@ -1,0 +1,41 @@
+{
+  "light": {
+    "brand": {
+      "colors": {
+        "brand-primary": "#65ADFF",
+        "brand-primary-10": "#EDF4FC",
+        "brand-secondary": "#1624C2",
+        "brand-extra": "#EC559F",
+        "background-color": "#FAFAFA",
+        "text-primary-color": "#212121",
+        "text-secondary-color": "#616161",
+        "text-light-color": "#9E9E9E",
+        "header-section-color": "#FFFFFF"
+      },
+
+      "sizes": {
+        "card-border-radius": 14,
+        "button-border-radius": 4,
+
+        "text-button-size": 16,
+        "text-default-size": 16,
+        "text-small-size": 14,
+        "text-tiny-size": 12,
+
+        "big-headline-size": 24,
+        "medium-headline-size": 20,
+        "small-headline-size": 18
+      },
+
+      "typography": {
+        "headline-text-bold": "BrandonGrotesque-Bold",
+        "headline-text-medium": "BrandonGrotesque-Medium",
+        "headline-text-regular": "BrandonGrotesque-Regular",
+
+        "body-text-regular": "BrandonGrotesque-Regular",
+        "body-text-medium": "BrandonGrotesque-Medium",
+        "body-text-bold": "BrandonGrotesque-Bold"
+      }
+    }
+  }
+}

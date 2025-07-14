@@ -1,15 +1,12 @@
 import { StyleSheet } from "react-native-unistyles";
 
 import { breakpoints } from "./breakpoints";
-import { appThemes } from "./themes";
-
-export const settings = {
-  // initialTheme: "light",
-  adaptiveThemes: true,
-};
+import { appThemes } from "./theme";
 
 StyleSheet.configure({
   themes: appThemes,
   breakpoints,
-  settings,
+  settings: {
+    initialTheme: "light",
+  },
 });

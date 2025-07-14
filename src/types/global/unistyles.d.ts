@@ -1,5 +1,5 @@
 import { breakpoints } from "constants/styling/breakpoints";
-import { appThemes } from "constants/styling/themes";
+import { appThemes } from "constants/styling/theme";
 
 type AppThemes = typeof appThemes;
 type AppBreakpoints = typeof breakpoints;

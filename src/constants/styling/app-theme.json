@@ -1,0 +1,95 @@
+{
+  "light": {
+    "colors": {
+      "Grey/50": "#FAFAFA",
+      "Grey/200": "#EEEEEE",
+      "Grey/white": "#fff",
+      "Grey/Text/Disabled": "#BDBDBD",
+      "Base/White": "#fff",
+      "Base/Black": "#000",
+      "Text/Default": "#3F3C43",
+
+      "secondary": {
+        "200": "#F5F5F5",
+        "300": "#E0E0E0",
+        "500": "#616161",
+        "700": "#3F3C43"
+      },
+
+      "error": {
+        "500": "#D72C0D"
+      },
+
+      "success": {
+        "500": "#2B735D",
+        "550": "#00841C"
+      }
+    },
+
+    "spacing": {
+      "xs": 4,
+      "sm": 8,
+      "md": 12,
+      "lg": 16,
+      "xl": 20,
+      "xxl": 24
+    },
+
+    "button": {
+      "sizes": {
+        "small": {
+          "spacing": [7.5, 11.5],
+          "textTransform": "none"
+        },
+        "medium": {
+          "spacing": [11.5, 14.5],
+          "textTransform": "none"
+        }
+      },
+
+      "types": {
+        "default": {
+          "border": "#BBBEC1",
+          "background": "#FFFFFF",
+          "color": "#3F3C43"
+        }
+      }
+    },
+
+    "input": {
+      "sizes": {
+        "medium": {
+          "spacing": [16, 14.5],
+          "borderWidth": 1.25,
+          "borderRadius": 5,
+          "fontSize": 16
+        }
+      },
+
+      "types": {
+        "default": {
+          "border": {
+            "idle": "#E0E0E0",
+            "error": "#D72C0D"
+          }
+        }
+      }
+    },
+
+    "drawer": {
+      "background": "#212121",
+      "icon": {
+        "active": "#9E9E9E"
+      },
+      "text": {
+        "active": "#fff"
+      }
+    },
+
+    "toaster": {
+      "info": {
+        "background": "#212121"
+      }
+    }
+  }
+}
