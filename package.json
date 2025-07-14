@@ -1,17 +1,17 @@
 {
   "name": "myapp",
   "main": "index.ts",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "expo start",
-    "reset-project": "node ./scripts/reset-project.js",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
     "lint": "expo lint",
-    "type-check": "tsc --noEmit",
+    "ts:check": "tsc --noEmit",
     "lingui:extract": "lingui extract",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "release-it"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
@@ -84,6 +84,7 @@
     "lint-staged": "^16.1.2",
     "mobx-persist-store": "^1.1.8",
     "prettier": "^3.6.2",
+    "release-it": "^19.0.3",
     "ts-jest": "^29.4.0",
     "typescript": "~5.8.3"
   },
