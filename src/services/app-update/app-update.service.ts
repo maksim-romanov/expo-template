@@ -6,7 +6,7 @@ import { AppUpdateStore } from "./app-update.store";
 import { ExpoUpdater, StoreVersionCheckUpdater } from "./store-provider";
 
 export interface IAppUpdateService extends Service {
-  checkForUpdate: () => Promise<void>;
+  checkForUpdate: () => Promise<boolean>;
 }
 
 @singleton()
@@ -22,16 +22,17 @@ export class StoreUpdateService implements IAppUpdateService {
   }
 
   async checkForUpdate() {
-    if (!this.store.isStale) return;
+    if (!this.store.isStale) return false;
 
     const isUpdateNeeded = await this.updater.needUpdate();
-    if (!isUpdateNeeded) return;
+    if (!isUpdateNeeded) return false;
 
     this.store.setAsNotified();
     // const confirmed = await this.modalManager.showBottomSheet<TAppUpdateAvailableModal>(AppUpdateAvailableModal);
-    // if (!confirmed) return;
+    // if (!confirmed) return false;
 
     await this.updater.updateApp();
+    return true;
   }
 }
 
@@ -46,11 +47,12 @@ export class ExpoUpdateService implements IAppUpdateService {
 
   async checkForUpdate() {
     const isUpdateNeeded = await this.updater.needUpdate();
-    if (!isUpdateNeeded) return;
+    if (!isUpdateNeeded) return false;
 
     const confirmed = await this.alert.confirm("New version is available", "Update now?");
-    if (!confirmed) return;
+    if (!confirmed) return false;
 
     await this.updater.updateApp();
+    return true;
   }
 }
