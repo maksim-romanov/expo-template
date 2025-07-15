@@ -1,6 +1,8 @@
 import { router } from "expo-router";
 import { inject, registry, singleton } from "tsyringe";
 
+import { ApiClient } from "services/modules/api-client/api-client";
+import { API_AUTH_CLIENT, API_CLIENT } from "services/modules/api-client/tokens";
 import { BaseLogger, Logger, LOGGER } from "services/modules/logger";
 
 import { AuthStore } from "./auth.store";
@@ -10,6 +12,8 @@ import { AuthStore } from "./auth.store";
 export class AuthService implements Service {
   constructor(
     @inject(AuthStore) public authStore: AuthStore,
+    @inject(API_CLIENT) public apiClient: ApiClient,
+    @inject(API_AUTH_CLIENT) public apiAuthClient: ApiClient,
     @inject(LOGGER) public logger: Logger,
   ) {}
 

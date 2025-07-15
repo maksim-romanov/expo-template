@@ -6,12 +6,8 @@
     "emitDecoratorMetadata": true,
     "baseUrl": "src",
     "paths": {
-      "components/*": [
-        "components/*",
-      ],
-      "hooks/*": [
-        "hooks/*",
-      ],
+      "components/*": ["components/*"],
+      "hooks/*": ["hooks/*"],
       "constants/*": [
         "constants/*",
       ],
@@ -26,6 +22,9 @@
       ],
       "locales/*": [
         "../locales/*",
+      ],
+      "types/*": [
+        "types/*",
       ]
     }
   },
