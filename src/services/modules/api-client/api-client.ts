@@ -39,11 +39,7 @@ export class ApiClient implements IApiClient {
     const url = this.urlBuilder.getUrl(this.apiUrl, path);
     const payload = params.body != null ? JSON.stringify(this.reqTf.transformRequest(params.body)) : undefined;
     const headers = await this.buildHeaders(params.headers);
-    const res = await fetch(url, {
-      method: "POST",
-      headers,
-      body: payload,
-    });
+    const res = await fetch(url, { method: "POST", headers, body: payload });
     return this.handleResponse(res);
   }
 
@@ -51,11 +47,7 @@ export class ApiClient implements IApiClient {
     const url = this.urlBuilder.getUrl(this.apiUrl, path);
     const payload = body != null ? JSON.stringify(this.reqTf.transformRequest(body)) : undefined;
     const headers = await this.buildHeaders();
-    const res = await fetch(url, {
-      method: "DELETE",
-      headers,
-      body: payload,
-    });
+    const res = await fetch(url, { method: "DELETE", headers, body: payload });
     return this.handleResponse(res);
   }
 

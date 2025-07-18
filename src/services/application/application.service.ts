@@ -17,7 +17,7 @@ export class ApplicationService implements Service {
   async init() {
     this.logger.log(`App init ${this.authService.authStore.isAuthenticated}`);
 
-    if (await this.storeUpdate.checkForUpdate()) return;
-    await this.expoUpdate.checkForUpdate();
+    // if (await this.storeUpdate.checkForUpdate()) return;
+    // await this.expoUpdate.checkForUpdate();
   }
 }

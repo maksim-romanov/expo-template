@@ -17,7 +17,10 @@ export class AuthService implements Service {
     @inject(LOGGER) public logger: Logger,
   ) {}
 
-  async init() {}
+  async init() {
+    this.apiAuthClient.get("/test");
+    this.apiAuthClient.get("/test");
+  }
 
   async login() {
     this.logger.log("login called");
