@@ -40,14 +40,11 @@ const RootStack = observer(function () {
   );
 });
 
-const initApp = async () => {
-  const bootstrapAppUseCase = container.resolve<BootstrapAppUseCase>(TOKENS.BOOTSTRAP_APP_USE_CASE);
-  await bootstrapAppUseCase.execute();
-};
+const bootstrapAppUseCase = container.resolve<BootstrapAppUseCase>(TOKENS.BOOTSTRAP_APP_USE_CASE);
 
 export default function RootLayout() {
   React.useEffect(() => {
-    initApp();
+    bootstrapAppUseCase.execute();
   }, []);
 
   return (
