@@ -1,12 +1,11 @@
 import { useState } from "react";
 
 import { Trans, useLingui } from "@lingui/react/macro";
-import { Button } from "react-native";
+import { Button, View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
 import { container } from "tsyringe";
 
 import { ThemedText } from "components/ThemedText";
-import { ThemedView } from "components/ThemedView";
 import { AuthService } from "modules/auth/services/auth-service";
 import { TOKENS } from "modules/container/tokens";
 
@@ -24,12 +23,12 @@ export const LoginScreen = function () {
   };
 
   return (
-    <ThemedView style={styles.container}>
+    <View style={styles.container}>
       <ThemedText>
         <Trans>LoginScreen</Trans>
       </ThemedText>
       <Button title={isLoading ? t`Logging in...` : t`Login`} onPress={handleLogin} disabled={isLoading} />
-    </ThemedView>
+    </View>
   );
 };
 

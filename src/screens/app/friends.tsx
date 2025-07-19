@@ -1,16 +1,16 @@
 import { Trans } from "@lingui/react/macro";
+import { View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
 
 import { ThemedText } from "components/ThemedText";
-import { ThemedView } from "components/ThemedView";
 
 export const FriendsScreen = function () {
   return (
-    <ThemedView style={styles.container}>
+    <View style={styles.container}>
       <ThemedText>
         <Trans>FriendsScreen</Trans>
       </ThemedText>
-    </ThemedView>
+    </View>
   );
 };
 

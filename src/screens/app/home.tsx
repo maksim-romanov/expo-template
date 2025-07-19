@@ -1,13 +1,13 @@
 import { Trans } from "@lingui/react/macro";
 import { Link } from "expo-router";
+import { View } from "react-native";
 import { StyleSheet } from "react-native-unistyles";
 
 import { ThemedText } from "components/ThemedText";
-import { ThemedView } from "components/ThemedView";
 
 export const HomeScreen = function () {
   return (
-    <ThemedView style={styles.container}>
+    <View style={styles.container}>
       <ThemedText>
         <Trans>HomeScreen</Trans>
       </ThemedText>
@@ -15,7 +15,7 @@ export const HomeScreen = function () {
       <Link href="/options" style={{ backgroundColor: "blue", padding: 10, borderRadius: 5 }}>
         <ThemedText>Options</ThemedText>
       </Link>
-    </ThemedView>
+    </View>
   );
 };
 

@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   async logout() {
-    await this.authRepository.logout();
+    // await this.authRepository.logout();
     await this.tokens.clear();
     this.store.setIsAuthenticated(false);
   }

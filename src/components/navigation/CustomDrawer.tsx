@@ -1,11 +1,10 @@
 import { DrawerContentScrollView, DrawerContentComponentProps } from "@react-navigation/drawer";
 import { router } from "expo-router";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StyleSheet } from "react-native-unistyles";
 
 import { ThemedText } from "components/ThemedText";
-import { ThemedView } from "components/ThemedView";
 
 interface DrawerItem {
   label: string;
@@ -32,13 +31,13 @@ export function CustomDrawer(props: DrawerContentComponentProps) {
     <SafeAreaView style={styles.container}>
       <DrawerContentScrollView {...props} contentContainerStyle={styles.scrollView}>
         {/* Header */}
-        <ThemedView style={styles.header}>
+        <View style={styles.header}>
           <ThemedText type="title">Menu</ThemedText>
           <ThemedText>Welcome back!</ThemedText>
-        </ThemedView>
+        </View>
 
         {/* Navigation Items */}
-        <ThemedView style={styles.menuSection}>
+        <View style={styles.menuSection}>
           {drawerItems.map((item, index) => (
             <TouchableOpacity
               key={index}
@@ -49,10 +48,10 @@ export function CustomDrawer(props: DrawerContentComponentProps) {
               <ThemedText style={styles.menuLabel}>{item.label}</ThemedText>
             </TouchableOpacity>
           ))}
-        </ThemedView>
+        </View>
 
         {/* Footer */}
-        <ThemedView style={styles.footer}>
+        <View style={styles.footer}>
           <TouchableOpacity
             style={styles.logoutButton}
             onPress={() => {
@@ -62,7 +61,7 @@ export function CustomDrawer(props: DrawerContentComponentProps) {
           >
             <ThemedText>Logout</ThemedText>
           </TouchableOpacity>
-        </ThemedView>
+        </View>
       </DrawerContentScrollView>
     </SafeAreaView>
   );
