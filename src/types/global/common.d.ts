@@ -6,4 +6,8 @@ interface Store {
   hydrate?: () => PVoid;
 }
 
+interface UseCase {
+  execute: () => PVoid | Promise<PVoid>;
+}
+
 type Nullable<T> = T | null;

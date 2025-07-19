@@ -8,3 +8,4 @@ keysfile
 rnfs
 unistyles
 lingui
+ofetch

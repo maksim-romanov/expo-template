@@ -33,21 +33,27 @@ const styles = StyleSheet.create((theme, runtime) => ({
   },
 
   wrapper: {
-    flexDirection: {
-      md: "column-reverse",
-      lg: "row-reverse",
+    justifyContent: {
+      lg: "center",
     },
+    alignItems: {
+      lg: "center",
+    },
+    flexDirection: "column-reverse",
     backgroundColor: "rgba(0, 0, 0, 0.35)",
   },
   container: {
     backgroundColor: "white",
     paddingBottom: runtime.insets.bottom,
     minHeight: 200,
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
     paddingHorizontal: 16,
     paddingTop: 16,
+    borderRadius: 16,
 
-    minWidth: runtime.screen.width * 0.3,
+    width: "100%",
+
+    maxWidth: {
+      lg: runtime.screen.width * 0.5,
+    },
   },
 }));

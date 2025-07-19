@@ -26,7 +26,7 @@ const styles = StyleSheet.create((theme) => ({
   default: {
     fontSize: 16,
     lineHeight: 24,
-    color: theme.colors.primary,
+    color: theme.colors["Text/Default"],
   },
   defaultSemiBold: {
     fontSize: 16,
