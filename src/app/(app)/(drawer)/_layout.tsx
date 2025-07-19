@@ -2,12 +2,16 @@ import { Drawer } from "expo-router/drawer";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { StyleSheet, useUnistyles } from "react-native-unistyles";
 
+import { CustomDrawer } from "components/navigation/CustomDrawer";
+
 export default function Layout() {
   const unistyles = useUnistyles();
 
   return (
     <GestureHandlerRootView style={styles.container}>
       <Drawer
+        initialRouteName="home"
+        drawerContent={(props) => <CustomDrawer {...props} />}
         screenOptions={{
           drawerType: unistyles.rt.breakpoint === "xl" ? "permanent" : "front",
           drawerStyle: styles.drawerStyle,
@@ -26,9 +30,6 @@ const styles = StyleSheet.create((theme, runtime) => ({
   },
 
   drawerStyle: {
-    backgroundColor: {
-      md: "white",
-      xl: "red",
-    },
+    backgroundColor: theme.colors.secondary,
   },
 }));

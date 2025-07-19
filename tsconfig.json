@@ -26,6 +26,9 @@
       ],
       "locales/*": [
         "../locales/*",
+      ],
+      "modules/*": [
+        "modules/*",
       ]
     }
   },

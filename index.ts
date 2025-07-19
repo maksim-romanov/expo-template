@@ -1,6 +1,6 @@
 import "reflect-metadata";
-import "services/register";
 
+import "modules/container/register";
 import "expo-router/entry";
 
 import "constants/styling/unistyles";

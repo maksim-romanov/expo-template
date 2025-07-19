@@ -3,7 +3,7 @@
     "SUPER_SECRET_KEY": "123development"
   },
   "public": {
-    "BASE_URL": "https://api.example.com:3000",
-    "AUTH_URL": "https://auth.example.com:3000"
+    "API_URL": "https://api.example.com",
+    "AUTH_URL": "https://auth.example.com"
   }
 }

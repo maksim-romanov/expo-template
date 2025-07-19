@@ -18,6 +18,16 @@ export default function Layout() {
           animation: "none",
         }}
       />
+      <Stack.Screen
+        name="logout"
+        options={{
+          presentation: "transparentModal",
+          gestureEnabled: true,
+          gestureDirection: isLarge ? "horizontal" : "vertical",
+          headerShown: false,
+          animation: "none",
+        }}
+      />
     </Stack>
   );
 }
