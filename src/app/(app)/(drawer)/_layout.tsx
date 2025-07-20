@@ -14,7 +14,6 @@ export default function Layout() {
         drawerContent={(props) => <CustomDrawer {...props} />}
         screenOptions={{
           drawerType: unistyles.rt.breakpoint === "xl" ? "permanent" : "front",
-          drawerStyle: styles.drawerStyle,
         }}
       >
         <Drawer.Screen name="(top-tabs)" />
@@ -27,9 +26,5 @@ export default function Layout() {
 const styles = StyleSheet.create((theme, runtime) => ({
   container: {
     flex: 1,
-  },
-
-  drawerStyle: {
-    backgroundColor: theme.colors.secondary,
   },
 }));

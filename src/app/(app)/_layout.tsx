@@ -8,6 +8,8 @@ export default function Layout() {
   return (
     <Stack>
       <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
+      <Stack.Screen name="(settings)" options={{ headerShown: false, presentation: "modal" }} />
+
       <Stack.Screen
         name="options"
         options={{
@@ -18,6 +20,7 @@ export default function Layout() {
           animation: "none",
         }}
       />
+
       <Stack.Screen
         name="logout"
         options={{

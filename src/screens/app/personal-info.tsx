@@ -5,15 +5,15 @@ import { StyleSheet } from "react-native-unistyles";
 
 import { ThemedText } from "components/ThemedText";
 
-export const SettingsScreen = function () {
+export const PersonalInfoScreen = function () {
   return (
     <View style={styles.container}>
       <ThemedText>
-        <Trans>SettingsScreen</Trans>
+        <Trans>Personal info form</Trans>
       </ThemedText>
 
-      <Link href="/personal-info">
-        <ThemedText>Personal info</ThemedText>
+      <Link href="../">
+        <ThemedText>Submit</ThemedText>
       </Link>
     </View>
   );
@@ -24,6 +24,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "red",
+    backgroundColor: "blue",
   },
 });
